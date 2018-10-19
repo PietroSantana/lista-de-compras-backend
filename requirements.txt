@@ -1,4 +1,3 @@
-uWSGI
 Flask
 Flask-RESTful
 Flask-Cors
