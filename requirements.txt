@@ -1,4 +1,7 @@
-flask
-flask_restful
-flask-cors
+uWSGI
+Flask
+Flask-RESTful
+Flask-Cors
 werkzeug
+flask-marshmallow
+marshmallow-sqlalchemy
