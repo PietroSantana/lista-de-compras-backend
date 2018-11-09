@@ -39,7 +39,7 @@ raw
 {"item":"abobora"}
 
 GET
-url: http://127.0.0.1/itens/abobora
+url: http://127.0.0.1/item/abobora
 
 PUT
 url: http://127.0.0.1/item
