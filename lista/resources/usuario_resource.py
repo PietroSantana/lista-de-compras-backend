@@ -1,7 +1,8 @@
 from flask_restful import Resource, reqparse, abort
 from flask import request
 from lista.models.usuario_model import UsuarioModel
-from lista.schemas.schemas import UsuarioSchema
+#from lista.schemas.schemas import UsuarioSchema
+from lista.schemas.usuario_schema import UsuarioSchema
 
 class UsuarioResource(Resource):
     parser = reqparse.RequestParser()
@@ -19,11 +20,12 @@ class UsuarioResource(Resource):
         json = ''
         try:
             usuario = UsuarioModel.encontrar_pelo_nome(nome)
+            print(usuario)
             if usuario:
                 schema = UsuarioSchema(exclude=['listas'])
                 json = schema.dump(usuario).data
             else:
-                return {"message","Usuario {} não existe".format(nome)},404
+                return {"message":"Usuario {} não existe".format(nome)},404
         except Exception as e:
             print(e)
             return {"message","Erro na requisição".format(nome)},500

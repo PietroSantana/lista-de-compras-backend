@@ -3,7 +3,8 @@ from flask import request
 from lista.models.item_model import ItemModel
 from lista.models.item_lista_model import ItemLista
 
-from lista.schemas.schemas import ItemSchema, ItemListaSchema
+#from lista.schemas.schemas import ItemSchema, ItemListaSchema
+from lista.schemas.item_schema import ItemSchema
 
 class ItemResource(Resource):
     parser = reqparse.RequestParser()

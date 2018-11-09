@@ -1,3 +1,4 @@
+'''
 from marshmallow_sqlalchemy import ModelSchema
 from marshmallow import fields, post_dump
 #from lista.models.dao_v2 import ItemModel,ListaModel,UsuarioModel,ItemLista
@@ -27,3 +28,4 @@ class UsuarioSchema(ModelSchema):
     listas = fields.Nested('ListaSchema',many=True, only=['nome'])
     class Meta:
         model = UsuarioModel
+'''

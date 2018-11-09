@@ -1,11 +1,12 @@
+'''
 #from lista.schemas.schemas import ItemSchema,ItemModel,UsuarioModel,UsuarioSchema,ListaModel,ListaSchema,ItemLista
 from flask_restful import Resource, reqparse, abort
 from flask import request
 
-'''
-Esta classe representa um recurso na arquitetura REST.
-Ela implementa os métodos GET,POST,PUT e DELETE
-'''
+
+#Esta classe representa um recurso na arquitetura REST.
+#Ela implementa os métodos GET,POST,PUT e DELETE
+
 class ItemResource(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument('item',
@@ -220,3 +221,4 @@ class ItensResource(Resource):
             print(e)
             return {"message": "Aconteceu um erro tentando retornar a lista de compras."}, 500
         return json,201
+'''

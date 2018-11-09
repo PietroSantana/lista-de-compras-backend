@@ -1,3 +1,4 @@
+'''
 from datetime import datetime
 
 class Usuario(object):
@@ -6,3 +7,4 @@ class Usuario(object):
         self.email = email
         self.dataCriacao = datetime.now()
         self.listas = listas
+'''

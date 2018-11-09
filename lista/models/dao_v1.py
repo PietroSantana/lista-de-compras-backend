@@ -1,3 +1,4 @@
+'''
 from lista.models.item import Item
 from werkzeug.security import safe_str_cmp
 class ItemDao:
@@ -45,4 +46,4 @@ class ItemDao:
     def remover_pelo_id(cls,id):
         lista = [i for i in cls.LISTA if i.id != id]
         cls.LISTA = lista
-
+'''

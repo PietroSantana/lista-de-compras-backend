@@ -1,3 +1,4 @@
+'''
 from dao import db,Base
 from datetime import datetime
 from sqlalchemy.ext.associationproxy import association_proxy
@@ -111,4 +112,4 @@ class UsuarioModel(Base):
     def remover(self):
         db.session.delete(self)
         db.session.commit()
-
+'''

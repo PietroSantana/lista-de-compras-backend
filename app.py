@@ -2,15 +2,15 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 #Importar cada recurso usado pela API.
-from lista.resources.usuario_resource import UsuarioResource,UsuariosResource
 from lista.resources.item_resource import ItemResource, ItensResource
+from lista.resources.usuario_resource import UsuarioResource,UsuariosResource
 from lista.resources.lista_resource import ListaResource, ListasResource
 
 
 
 app = Flask(__name__)
 #Configurações relativas ao sqlalchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lista.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['SQLALCHEMY_ECHO'] = True
@@ -23,7 +23,7 @@ CORS(app,resources={r"/*": {"origins": "*"}}) #O uso do cors
 #cria as tabelas do banco de dados, caso elas não estejam criadas
 @app.before_first_request
 def create_tables():
-    print("oi create tables!")
+    print("criar tabelas")
     db.create_all()
 #fim criaçaõ de tabelas
 

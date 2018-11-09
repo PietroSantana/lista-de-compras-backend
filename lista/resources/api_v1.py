@@ -1,3 +1,4 @@
+'''
 from flask import jsonify
 from flask_restful import Resource, abort,reqparse
 
@@ -10,10 +11,10 @@ _item_parser.add_argument('item',
                           required=True,
                           help="O nome do Item não pode estar em branco."
                           )
-'''
-Esta classe representa um recurso na arquitetura REST.
-Ela implementa os métodos GET,POST,PUT e DELETE
-'''
+
+#Esta classe representa um recurso na arquitetura REST.
+#Ela implementa os métodos GET,POST,PUT e DELETE
+
 class Item(Resource):
 
     def get(self,item):
@@ -52,3 +53,4 @@ class Item(Resource):
 class ItemList(Resource):
     def get(self):
         return jsonify(LISTA_DE_COMPRAS)
+'''
