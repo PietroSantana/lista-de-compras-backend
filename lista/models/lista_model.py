@@ -6,9 +6,9 @@ class ListaModel(Base):
     nome = db.Column(db.String(200), unique=True)
     usuario_id = db.Column(db.Integer,db.ForeignKey("usuarios.id"))
     usuario = db.relationship("UsuarioModel", back_populates="listas")
-
     dataCadastro = db.Column(db.DateTime)
     itens = db.relationship("ItemLista", back_populates="lista")
+
     def __init__(self,nome,usuario_id):
         self.nome = nome
         self.usuario_id = usuario_id

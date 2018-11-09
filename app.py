@@ -6,8 +6,6 @@ from lista.resources.item_resource import ItemResource, ItensResource
 from lista.resources.usuario_resource import UsuarioResource,UsuariosResource
 from lista.resources.lista_resource import ListaResource, ListasResource
 
-
-
 app = Flask(__name__)
 #Configurações relativas ao sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
@@ -27,9 +25,10 @@ def create_tables():
     db.create_all()
 #fim criaçaõ de tabelas
 
-
 api.add_resource(ItensResource, '/itens')
 api.add_resource(ItemResource, '/item', '/item/<string:item>')
+
+
 api.add_resource(ListasResource, '/listas')
 api.add_resource(ListaResource, '/lista','/lista/<string:lista>')
 api.add_resource(UsuarioResource,'/usuario','/usuario/<string:nome>')

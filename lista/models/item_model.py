@@ -1,6 +1,5 @@
 from dao import db,Base
 from datetime import datetime
-from sqlalchemy.ext.associationproxy import association_proxy
 
 class ItemModel(Base):
     __tablename__ = 'itens'
