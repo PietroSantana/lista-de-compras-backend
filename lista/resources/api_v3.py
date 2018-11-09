@@ -1,4 +1,4 @@
-from lista.schemas.itemSchema import ItemSchema,ItemModel,UsuarioModel,UsuarioSchema,ListaModel,ListaSchema,ItemLista
+from lista.schemas.schemas import ItemSchema,ItemModel,UsuarioModel,UsuarioSchema,ListaModel,ListaSchema,ItemLista
 from flask_restful import Resource, reqparse, abort
 from flask import request
 
@@ -43,7 +43,7 @@ class ItemResource(Resource):
                 item = ItemModel(nome=nome)
                 item.adicionar()
                 item = ItemModel.encontrar_pelo_nome(nome)
-                schema = ItemSchema()
+                schema = ItemSchema(exclude=['listas'])
                 json = schema.dump(item).data
         except Exception as e:
             print(e)
@@ -57,10 +57,10 @@ class ItemResource(Resource):
             if item:
                 item.remover()
                 lista = ItemModel.listar()
-                schema = ItemSchema(many=True)
+                schema = ItemSchema(many=True,exclude=['listas'])
                 json = schema.dump(lista).data
             else:
-                abort(404, message="Item {} não está na lista".format(item))
+                return {"message":"Item {} não está na lista".format(item)},404
         except Exception as e:
             print(e)
         return json, 201
