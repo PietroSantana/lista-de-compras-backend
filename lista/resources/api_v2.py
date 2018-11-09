@@ -1,5 +1,5 @@
-from lista.schemas.ItemSchema import ItemSchema
-from lista.models.dao import ItemDao
+from lista.schemas.itemSchema import ItemSchema
+from lista.models.dao_v1 import ItemDao
 from flask_restful import Resource, reqparse, abort
 _item_parser = reqparse.RequestParser()
 _item_parser.add_argument('item',
