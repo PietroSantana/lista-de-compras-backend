@@ -1,9 +1,13 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
-#from lista.resources.api_v2 import Item,ItemList
-from lista.resources.api_v3 import ItemResource,ItensResource, UsuarioResource, ListaResource, ListasResource,\
-    UsuariosResource
+#Importar cada recurso usado pela API.
+from lista.resources.usuario_resource import UsuarioResource,UsuariosResource
+from lista.resources.item_resource import ItemResource, ItensResource
+from lista.resources.lista_resource import ListaResource, ListasResource
+
+
+
 app = Flask(__name__)
 #Configurações relativas ao sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lista.db'
@@ -28,7 +32,7 @@ api.add_resource(ItensResource, '/itens')
 api.add_resource(ItemResource, '/item', '/item/<string:item>')
 api.add_resource(ListasResource, '/listas')
 api.add_resource(ListaResource, '/lista','/lista/<string:lista>')
-api.add_resource(UsuarioResource,'/usuario','/usuario/<string:usuario>')
+api.add_resource(UsuarioResource,'/usuario','/usuario/<string:nome>')
 api.add_resource(UsuariosResource, '/usuarios')
 
 if __name__ == '__main__':

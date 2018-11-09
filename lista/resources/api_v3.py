@@ -1,4 +1,4 @@
-from lista.schemas.schemas import ItemSchema,ItemModel,UsuarioModel,UsuarioSchema,ListaModel,ListaSchema,ItemLista
+#from lista.schemas.schemas import ItemSchema,ItemModel,UsuarioModel,UsuarioSchema,ListaModel,ListaSchema,ItemLista
 from flask_restful import Resource, reqparse, abort
 from flask import request
 
