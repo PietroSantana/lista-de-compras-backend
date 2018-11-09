@@ -7,7 +7,6 @@ from lista.resources.api_v3 import ItemResource,ItensResource, UsuarioResource, 
 app = Flask(__name__)
 #Configurações relativas ao sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lista.db'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://t2g1:t2g1@143.107.102.7/t2g1'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['SQLALCHEMY_ECHO'] = True
