@@ -29,7 +29,7 @@ Abrir o Postman
 Criar requisições para teste da API
 
 POST
-url: http://127.0.0.1/item
+url: http://127.0.0.1:5000/item
 
 Headers
 key:Content-Type
@@ -39,10 +39,10 @@ raw
 {"item":"abobora"}
 
 GET
-url: http://127.0.0.1/item/abobora
+url: http://127.0.0.1:5000/item/abobora
 
 PUT
-url: http://127.0.0.1/item
+url: http://127.0.0.1:5000/item
 
 Headers
 key:Content-Type 
@@ -52,8 +52,8 @@ raw
 {"item":"tomates"}
 
 GET
-url: http://127.0.0.1/itens
+url: http://127.0.0.1:5000/itens
 
 DELETE
-url: http://127.0.0.1/item/abobora
+url: http://127.0.0.1:5000/item/abobora
 
