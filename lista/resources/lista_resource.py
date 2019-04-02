@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask_restful import Resource, reqparse, abort
 from flask import request
 from lista.models.lista_model import ListaModel

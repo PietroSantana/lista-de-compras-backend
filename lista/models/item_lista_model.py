@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from dao import db,Base
 
 class ItemLista(Base):

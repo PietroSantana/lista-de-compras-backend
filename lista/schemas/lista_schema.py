@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from marshmallow_sqlalchemy import ModelSchema
 from marshmallow import fields
 

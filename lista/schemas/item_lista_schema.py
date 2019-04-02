@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from marshmallow_sqlalchemy import ModelSchema
 from marshmallow import fields
 
@@ -6,4 +7,4 @@ class ItemListaSchema(ModelSchema):
     item = fields.Nested("ItemSchema", many=False, only=['nome'])
     #preco = fields.Str()
     class Meta:
-        model: ItemLista
+        model = ItemLista

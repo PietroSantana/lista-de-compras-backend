@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 from dao import db,Base
 from datetime import datetime
 

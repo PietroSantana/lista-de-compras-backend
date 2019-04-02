@@ -1,19 +1,18 @@
+# -*- coding: utf-8 -*-
 from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
-#Importar cada recurso usado pela API.
 from lista.resources.item_resource import ItemResource, ItensResource
 from lista.resources.usuario_resource import UsuarioResource,UsuariosResource
 from lista.resources.lista_resource import ListaResource, ListasResource
 
 app = Flask(__name__)
-#Configurações relativas ao sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['SQLALCHEMY_ECHO'] = True
 
-app.secret_key = b'\xc4]gW\x0f\x8d\xc8\x05ocG\xf1\xb1j,{'
+app.secret_key = 'secreto'
 
 #fim configurações relativas ao sqlalchemy
 api = Api(app)
