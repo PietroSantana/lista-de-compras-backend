@@ -3,7 +3,8 @@ Backend do Projeto Lista de Compras para a disciplina PCS3643 - 2018
 
 ## Instalação
 Este projeto precisa de python 3 instalado. Nas máquinas do Labprog, o path está em
-```'C:\Program Files\Python37\'
+```
+'C:\Program Files\Python37\'
 ```
 
 Clonar o projeto através da linha de comando
