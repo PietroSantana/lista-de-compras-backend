@@ -34,7 +34,7 @@ class ListaResource (Resource):
             lista = ListaModel(nome=nome,usuario_id=1)
 
             for i in itens_lista:
-                il =ItemLista(preco="20 reais")
+                il =ItemLista(preco=" x reais")
                 item_temp = ItemModel.encontrar_pelo_nome(i['nome'])
                 if item_temp:
                     il.item = item_temp
@@ -51,17 +51,20 @@ class ListaResource (Resource):
         return json, 201
 
     def get(self,nome):
+        #print(f"Aqui! => {nome}")
         json = ""
         try:
             item = ListaModel.encontrar_pelo_nome(nome)
+            print(item)
             if item:
-                schema = ItemSchema(many=False)
+                schema = ListaSchema(many=False)
                 json = schema.dump(item)
             else:
-                abort(404, message="Item {} não está na lista".format(item))
+                abort(404, message="Lista {} não está na resposta".format(item))
         except Exception as e:
             print(e)
-            abort(404, message="Item {} não está na lista".format(item))
+            abort(404, message="Lista {} não está no resultado".format(item))
+        return json,200
             
 class ListasResource(Resource):
 

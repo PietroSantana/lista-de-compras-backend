@@ -29,7 +29,7 @@ api.add_resource(ItemResource, '/item', '/item/<string:item>')
 
 
 api.add_resource(ListasResource, '/listas')
-api.add_resource(ListaResource, '/lista','/lista/<string:lista>')
+api.add_resource(ListaResource, '/lista','/lista/<string:nome>')
 api.add_resource(UsuarioResource,'/usuario','/usuario/<string:nome>')
 api.add_resource(UsuariosResource, '/usuarios')
 

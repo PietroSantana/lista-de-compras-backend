@@ -1,110 +1,291 @@
 {
 	"info": {
-		"_postman_id": "45e7fa82-ecdc-4013-90d2-3160ede00826",
-		"name": "lista de compras",
+		"_postman_id": "2b1de662-30f0-4d5e-b2b5-37f828f00096",
+		"name": "Lista-de-compras",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "itens",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						},
+						"description": "lista os usuários do aplicativo\n"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5000/itens",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"itens"
-					]
+				{
+					"name": "usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"joao\",\n\t\"email\":\"joao@usp.br\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/usuario",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario"
+							]
+						},
+						"description": "lista os usuários do aplicativo\n"
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/usuario/joao",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario",
+								"joao"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "item",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"item\":\"tomates\"\n}"
+			"item": [
+				{
+					"name": "/item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\":\"batatas\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						},
+						"description": "Pega os itens do servidor\n"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5000/item",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"item"
-					]
+				{
+					"name": "/item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/item/batatas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"batatas"
+							]
+						},
+						"description": "Pega o iten do servidor\n"
+					},
+					"response": []
+				},
+				{
+					"name": "/item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/item/batata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"batata"
+							]
+						},
+						"description": "Pega os itens do servidor\n"
+					},
+					"response": []
+				},
+				{
+					"name": "/item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\":\"batata\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						},
+						"description": "Pega os itens do servidor\n"
+					},
+					"response": []
+				},
+				{
+					"name": "/itens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/itens",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"itens"
+							]
+						},
+						"description": "Pega os itens do servidor\n"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "item",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"item\":\"peras\"\n}"
+			"name": "lista",
+			"item": [
+				{
+					"name": "listas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/listas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"listas"
+							]
+						},
+						"description": "Mostra todas as listas de compras"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5000/item",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"item"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "itens",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "lista",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"lista2\",\n\t\"itens\":[\n\t\t{\"nome\":\"batatinha doce\"},\n\t\t{\"nome\":\"abacate verde\"},\n\t\t{\"nome\":\"tomates maduros\"}\n\t\t]\n\t\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lista",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							]
+						},
+						"description": "Mostra todas as listas de compras"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5000/item/abacate",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"item",
-						"abacate"
-					]
+				{
+					"name": "lista",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/lista",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							]
+						},
+						"description": "Mostra todas as listas de compras"
+					},
+					"response": []
+				},
+				{
+					"name": "lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/lista",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							]
+						},
+						"description": "recupera os dados da lista (nome, itens, data)"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
