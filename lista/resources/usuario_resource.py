@@ -24,7 +24,7 @@ class UsuarioResource(Resource):
             print(usuario)
             if usuario:
                 schema = UsuarioSchema(exclude=['listas'])
-                json = schema.dump(usuario).data
+                json = schema.dump(usuario)
             else:
                 return {"message":"Usuario {} não existe".format(nome)},404
         except Exception as e:
@@ -47,7 +47,7 @@ class UsuarioResource(Resource):
                 usuario = UsuarioModel.encontrar_pelo_nome(data['nome'])
 
                 user_schema = UsuarioSchema(exclude=['listas'])
-                json = user_schema.dump(usuario).data
+                json = user_schema.dump(usuario)
                 return json, 201
 
         except Exception as ex:
@@ -64,7 +64,7 @@ class UsuariosResource(Resource):
         try:
             usuarios = UsuarioModel.listar()
             schema = UsuarioSchema(many=True,exclude=['listas'])
-            json = schema.dump(usuarios).data
+            json = schema.dump(usuarios)
         except Exception as e:
             print(e)
             return {"message": "Aconteceu um erro tentando retornar a lista de usuarios."}, 500

@@ -19,7 +19,7 @@ class ItemResource(Resource):
             item = ItemModel.encontrar_pelo_nome(item)
             if item:
                 schema = ItemSchema(exclude=['listas'])
-                json = schema.dump(item).data
+                json = schema.dump(item)
             else:
                 abort(404, message="Item {} não está na lista".format(item))
         except Exception as e:
@@ -43,7 +43,7 @@ class ItemResource(Resource):
                 item.adicionar()
                 item = ItemModel.encontrar_pelo_nome(nome)
                 schema = ItemSchema(exclude=['listas'])
-                json = schema.dump(item).data
+                json = schema.dump(item)
         except Exception as e:
             print(e)
             abort(500, message="Erro no POST")
@@ -57,7 +57,7 @@ class ItemResource(Resource):
                 item.remover()
                 lista = ItemModel.listar()
                 schema = ItemSchema(many=True,exclude=['listas'])
-                json = schema.dump(lista).data
+                json = schema.dump(lista)
             else:
                 return {"message":"Item {} não está na lista".format(item)},404
         except Exception as e:
@@ -78,7 +78,7 @@ class ItemResource(Resource):
                 item.adicionar()
                 schema = ItemSchema(many=True)
                 item = ItemModel.encontrar_pelo_nome(nome)
-                json = schema.dump(item).data
+                json = schema.dump(item)
         except Exception as e:
             print(e)
         return json, 201
@@ -89,7 +89,7 @@ class ItensResource(Resource):
         try:
             itens = ItemModel.listar()
             schema = ItemSchema(many=True,exclude=['listas'])
-            json = schema.dump(itens).data
+            json = schema.dump(itens)
         except Exception as e:
             print(e)
             return {"message": "Aconteceu um erro tentando retornar a lista de compras."}, 500

@@ -44,7 +44,7 @@ class ListaResource (Resource):
             lista.adicionar()
             lista = ListaModel.encontrar_pelo_nome(data["nome"])
             schema = ListaSchema()
-            json = schema.dump(lista).data
+            json = schema.dump(lista)
         except Exception as e:
             print(e)
             abort(500, message="Erro no POST")
@@ -56,7 +56,7 @@ class ListaResource (Resource):
             item = ListaModel.encontrar_pelo_nome(nome)
             if item:
                 schema = ItemSchema(many=False)
-                json = schema.dump(item).data
+                json = schema.dump(item)
             else:
                 abort(404, message="Item {} não está na lista".format(item))
         except Exception as e:
@@ -70,7 +70,7 @@ class ListasResource(Resource):
         try:
             listas = ListaModel.listar()
             schema = ListaSchema(many=True)
-            json = schema.dump(listas).data
+            json = schema.dump(listas)
         except Exception as e:
             print(e)
             return {"message": "Aconteceu um erro tentando retornar a lista de compras."}, 500
