@@ -9,24 +9,6 @@
 			"name": "usuario",
 			"item": [
 				{
-					"name": "usuarios",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/usuarios",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"usuarios"
-							]
-						},
-						"description": "lista os usuários do aplicativo\n"
-					},
-					"response": []
-				},
-				{
 					"name": "usuario",
 					"request": {
 						"method": "POST",
@@ -78,8 +60,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						},
+						"description": "lista os usuários do aplicativo\n"
+					},
+					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "item",
@@ -198,7 +199,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "lista",
@@ -234,7 +236,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\":\"lista2\",\n\t\"itens\":[\n\t\t{\"nome\":\"batatinha doce\"},\n\t\t{\"nome\":\"abacate verde\"},\n\t\t{\"nome\":\"tomates maduros\"}\n\t\t]\n\t\n}"
+							"raw": "{\n\t\"nome\":\"lista\",\n\t\"itens\":[\n\t\t{\"nome\":\"batatinha doce\"},\n\t\t{\"nome\":\"abacate verde\"},\n\t\t{\"nome\":\"tomates maduros\"}\n\t\t]\n\t\n}"
 						},
 						"url": {
 							"raw": "{{url}}/lista",
@@ -273,11 +275,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/lista",
+							"raw": "{{url}}/lista/lista",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"lista",
 								"lista"
 							]
 						},
@@ -285,7 +288,9 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
